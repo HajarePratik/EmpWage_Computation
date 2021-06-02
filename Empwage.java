@@ -6,10 +6,10 @@ class Empwage
 		public static final int NUM_OF_WORKING_DAYS = 20;
 		public static final int MAX_HRS_IN_MONTH = 100;
 		
-		public static void main(String args[])
+		
+		public static int computeEmpWage()
 		{
-				
-				System.out.println("Welcome to the Employee Wage Computation Program");
+			System.out.println("Welcome to the Employee Wage Computation Program");
 				
 				int totalEmpWage = 0,totalWorkingDays = 0,totalEmpHrs = 0;
 				
@@ -42,6 +42,11 @@ class Empwage
 					System.out.println("Employee Wage is :" + empWage);
 				}
 				System.out.println("Total Employee Wage is :" + totalEmpWage);
-				
+				return totalEmpWage;
+		}
+		
+		public static void main(String args[])
+		{
+			computeEmpWage();				
 		}
 }
