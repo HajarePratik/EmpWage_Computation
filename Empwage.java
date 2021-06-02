@@ -53,8 +53,6 @@ class Empwage
 					
 					}
 					totalEmpHrs += empHour;
-					//int empWage = empHour * empRatePerHour;
-					//totalEmpWage += empWage;
 					System.out.println("Day-"+ totalWorkingDays + " Employee Hour is :" + empHour);
 				}
 				return totalEmpHrs * companyEmpWage.empRatePerHour;
