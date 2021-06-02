@@ -1,4 +1,4 @@
-class Empwage
+public class Empwage implements InterfaceEmpwage
 {
 		public static final int IS_FULL_TIME = 1;
 		public static final int IS_PART_TIME = 2;
@@ -11,12 +11,12 @@ class Empwage
 			companyEmpWageArray = new CompanyEmpwage[5];
 		}
 
-		private void addCompanyEmpwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
+		public void addCompanyEmpwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
 		{
 			companyEmpWageArray[numofCompany] = new CompanyEmpwage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
 			numofCompany++;
 		}
-		private void computeEmpWage()
+		public void computeEmpWage()
 		{
 			for (int i = 0; i<numofCompany;i++)
 			{
