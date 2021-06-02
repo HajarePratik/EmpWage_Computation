@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Empwage implements InterfaceEmpwage
 {
@@ -6,17 +8,19 @@ public class Empwage implements InterfaceEmpwage
 		public static final int IS_PART_TIME = 2;
 	
 		private ArrayList<CompanyEmpwage> companyEmpArrayList;
-		
+		private Map<String, CompanyEmpwage> companyToEmpWageMap;
 		
 		public Empwage()
 		{
 			companyEmpArrayList = new ArrayList<CompanyEmpwage>();
+			companyToEmpWageMap = new HashMap<>();
 		}
 
 		public void addCompanyEmpwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
 		{
 			CompanyEmpwage companyEmpwage = new CompanyEmpwage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
 			companyEmpArrayList.add(companyEmpwage);
+			companyToEmpWageMap.put(company, companyEmpwage);
 		}
 		public void computeEmpWage()
 		{
@@ -36,6 +40,10 @@ public class Empwage implements InterfaceEmpwage
 				int day = i + 1;
 				System.out.println("Daily Wage For Day" + day +":" + companyEmpwage.empDailyWage.get(i));
 			}
+		}
+		public int getTotalWage(String company)
+		{
+			return companyToEmpWageMap.get(company).totalEmpWage;
 		}
 		public int computeEmpWage(CompanyEmpwage companyEmpWage)
 		{
@@ -78,5 +86,8 @@ public class Empwage implements InterfaceEmpwage
 			emp.addCompanyEmpwage("DMart",20, 2, 10);
 			emp.addCompanyEmpwage("Reliance",10, 4, 20);
 			emp.computeEmpWage();
+			System.out.println("Total Wage for DMart : " + emp.getTotalWage("DMart"));
+			System.out.println("Total Wage for Reliance : " + emp.getTotalWage("Reliance"));
+			
 		}
 }
