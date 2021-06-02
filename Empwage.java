@@ -24,7 +24,17 @@ public class Empwage implements InterfaceEmpwage
 			{
 				CompanyEmpwage companyEmpWage = companyEmpArrayList.get(i);
 				companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
-				System.out.println(companyEmpWage.company+" Total Wage is: "+ companyEmpWage.totalEmpWage);
+				System.out.println("Company Name : "+ companyEmpWage.company);
+				DisplayDailyWageforCompany(companyEmpWage);
+				System.out.println("Total Wage is: "+ companyEmpWage.totalEmpWage);
+			}
+		}
+		public void DisplayDailyWageforCompany(CompanyEmpwage companyEmpwage)
+		{
+			for(int i=0; i<companyEmpwage.empDailyWage.size();i++)
+			{
+				int day = i + 1;
+				System.out.println("Daily Wage For Day" + day +":" + companyEmpwage.empDailyWage.get(i));
 			}
 		}
 		public int computeEmpWage(CompanyEmpwage companyEmpWage)
