@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.ArrayList; 	// Importing a ArrayList Package
 
-public class Empwage implements InterfaceEmpwage
+public class Empwage implements InterfaceEmpwage 	// Implementing a Interface
 {
 		public static final int IS_FULL_TIME = 1;
 		public static final int IS_PART_TIME = 2;
@@ -10,7 +10,7 @@ public class Empwage implements InterfaceEmpwage
 		
 		public Empwage()
 		{
-			companyEmpArrayList = new ArrayList<CompanyEmpwage>();
+			companyEmpArrayList = new ArrayList<CompanyEmpwage>();  // Initallizing ArrayList in Default Constructor
 		}
 
 		public void addCompanyEmpwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
@@ -25,7 +25,7 @@ public class Empwage implements InterfaceEmpwage
 				CompanyEmpwage companyEmpWage = companyEmpArrayList.get(i);
 				companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
 				System.out.println("Company Name : "+ companyEmpWage.company);
-				DisplayDailyWageforCompany(companyEmpWage);
+				DisplayDailyWageforCompany(companyEmpWage);					// Calling a Method with passing a One Parameter and Show Total Wage
 				System.out.println("Total Wage is: "+ companyEmpWage.totalEmpWage);
 			}
 		}
@@ -34,7 +34,7 @@ public class Empwage implements InterfaceEmpwage
 			for(int i=0; i<companyEmpwage.empDailyWage.size();i++)
 			{
 				int day = i + 1;
-				System.out.println("Daily Wage For Day" + day +":" + companyEmpwage.empDailyWage.get(i));
+				System.out.println("Daily Wage For Day" + day +":" + companyEmpwage.empDailyWage.get(i));      // Displaying a Daily Wage for Day
 			}
 		}
 		public int computeEmpWage(CompanyEmpwage companyEmpWage)
@@ -65,18 +65,18 @@ public class Empwage implements InterfaceEmpwage
 						empHour = 0;
 					
 					}
-					totalEmpHrs += empHour;
+					totalEmpHrs += empHour;  // Calculting a EmpHour and Printing a Emp Hour
 					System.out.println("Day-"+ totalWorkingDays + " Employee Hour is :" + empHour);
 				}
-				return totalEmpHrs * companyEmpWage.empRatePerHour;
+				return totalEmpHrs * companyEmpWage.empRatePerHour;  // Multiply Total EmpHrs with Rate Per Hour and Returning the Value
 		}
 		
 		public static void main(String args[])
 		{
 			System.out.println("Welcome to the Employee Wage Computation Program");
-			Empwage emp = new Empwage();
-			emp.addCompanyEmpwage("DMart",20, 2, 10);
-			emp.addCompanyEmpwage("Reliance",10, 4, 20);
-			emp.computeEmpWage();
+			Empwage emp = new Empwage();  					// Creating a Object of Class
+			emp.addCompanyEmpwage("DMart",20, 2, 10);  			
+			emp.addCompanyEmpwage("Reliance",10, 4, 20);			// Calling a addCompany Method and Add One By One Company To The ArrayList
+			emp.computeEmpWage();						// Calling a Method
 		}
 }
