@@ -3,12 +3,15 @@ class Empwage
 		public static final int IS_FULL_TIME = 1;
 		public static final int IS_PART_TIME = 2;
 	
+		//Declearing Varibles
 		private final String company;
 		private final int empRatePerHour;
 		private final int numOfWorkingDays;
 		private final int maxHoursPerMonth;
 		private int totalEmpWage = 0;
 		
+	
+		//Creating a Constuctor here
 		public Empwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
 		{
 			this.company = company;
@@ -47,8 +50,8 @@ class Empwage
 					
 					}
 					totalEmpHrs += empHour;
-					int empWage = empHour * empRatePerHour;
-					totalEmpWage += empWage;
+					int empWage = empHour * empRatePerHour;  	// Calculating Employee Wage
+					totalEmpWage += empWage; 			// Giving a One By One Wage to the TotalEmpWage Variable
 					System.out.println("Day-"+ totalWorkingDays + " Employee Wage is :" + empWage);
 				}
 				System.out.println("Total Employee Wage for Company "+company+" is:"+ totalEmpWage);
@@ -58,10 +61,10 @@ class Empwage
 		public static void main(String args[])
 		{
 			System.out.println("Welcome to the Employee Wage Computation Program");
-			Empwage dmart = new Empwage("DMart",20,2,10);
+			Empwage dmart = new Empwage("DMart",20,2,10); // Creating a Object of Each Company and Calling a Method Using Object
 			Empwage reliance = new Empwage("Reliance",10,4,20);
 			Empwage ibm = new Empwage("IBM",10,6,30);
-			dmart.computeEmpWage();
+			dmart.computeEmpWage();   // Calling Method
 			reliance.computeEmpWage();
 			ibm.computeEmpWage();
 		}
