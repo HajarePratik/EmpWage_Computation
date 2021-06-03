@@ -1,14 +1,14 @@
-public class Empwage implements InterfaceEmpwage
+public class Empwage implements InterfaceEmpwage   // Implementing a Interface
 {
 		public static final int IS_FULL_TIME = 1;
 		public static final int IS_PART_TIME = 2;
 	
-		private int numofCompany = 0;
-		private CompanyEmpwage[] companyEmpWageArray;
+		private int numofCompany = 0;				// Take a Varible for Starting Array with 0th index
+		private CompanyEmpwage[] companyEmpWageArray;		// Defining Array
 		
 		public Empwage()
 		{
-			companyEmpWageArray = new CompanyEmpwage[5];
+			companyEmpWageArray = new CompanyEmpwage[5];  	// Create a Constructor and Initallizing Array with Size
 		}
 
 		public void addCompanyEmpwage(String company,int empRatePerHour,int numOfWorkingDays,int maxHoursPerMonth)
@@ -52,18 +52,18 @@ public class Empwage implements InterfaceEmpwage
 						empHour = 0;
 					
 					}
-					totalEmpHrs += empHour;
+					totalEmpHrs += empHour;			// Calculting a EmpHour and Printing a Emp Hour
 					System.out.println("Day-"+ totalWorkingDays + " Employee Hour is :" + empHour);
 				}
-				return totalEmpHrs * companyEmpWage.empRatePerHour;
+				return totalEmpHrs * companyEmpWage.empRatePerHour;  // Multiply Total EmpHrs with Rate Per Hour and Returning the Value
 		}
 		
 		public static void main(String args[])
 		{
 			System.out.println("Welcome to the Employee Wage Computation Program");
-			Empwage emp = new Empwage();
-			emp.addCompanyEmpwage("DMart",20, 2, 10);
-			emp.addCompanyEmpwage("Reliance",10, 4, 20);
-			emp.computeEmpWage();
+			Empwage emp = new Empwage(); 					// Creating a Object of Class
+			emp.addCompanyEmpwage("DMart",20, 2, 10);			
+			emp.addCompanyEmpwage("Reliance",10, 4, 20);			// Calling a addCompany Method and Add One By One Company To The Array
+			emp.computeEmpWage();						// Calling a Method 
 		}
 }
